@@ -17,7 +17,7 @@ public class WaypointAI : MonoBehaviour
     [SerializeField] private GameObject[] goal;
     private int goalIndex = 0;
     private GameObject currentGoal;
-   
+    public bool isAIMoving = true;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,10 @@ public class WaypointAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isAIMoving == false)
+        {
+            return; //exit the method early
+        }
         #region Directional Controls
         /*To add AWSD direction controls:
         speedX = 0f;
@@ -84,6 +88,20 @@ public class WaypointAI : MonoBehaviour
             position += (direction * speed * Time.deltaTime);
             transform.position = (Vector3)position;
         }
+            else
+        {
+            goalIndex++;
+
+            //if (goalIndex >= goal.Length)
+            if (goalIndex > goal.Length - 1)
+            {
+                goalIndex = 0;
+            }
+
+            currentGoal = goal[goalIndex];
+        }
+            #region Broken Attempt
+            /* Broken Attempt
             else if (goalIndex <= goal.Length)
             {
             //increase goalIndex by 1 (goalIndex + 1)
@@ -94,5 +112,7 @@ public class WaypointAI : MonoBehaviour
                 {
                 goalIndex = 0;
                 }
+        */
+        #endregion
     }
 }

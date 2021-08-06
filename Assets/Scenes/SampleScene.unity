@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 117057943}
   - component: {fileID: 117057942}
   - component: {fileID: 117057941}
+  - component: {fileID: 117057944}
   m_Layer: 0
   m_Name: Brainlet
   m_TagString: Untagged
@@ -160,6 +161,7 @@ MonoBehaviour:
   - {fileID: 173009463}
   - {fileID: 1955050071}
   - {fileID: 1785904729}
+  isAIMoving: 1
 --- !u!212 &117057942
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -225,6 +227,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &117057944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117057940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13071d7d48e3bf24199faf75d05f9428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!1 &173009463
 GameObject:
   m_ObjectHideFlags: 0
